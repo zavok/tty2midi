@@ -60,12 +60,8 @@ main(void)
 	while(1) {
 		unsigned char buf[1024];
 		int n, r;
-		/* TODO: add poll(2) */
 		if ((n = read(tf, buf, 1)) == 0) continue;
 
-		//fprintf(stderr, "%x %x %x\t", buf[0],
-		//  buf[1], buf[2]);
-		
 		snd_seq_ev_clear(&ev);
 		snd_seq_ev_set_subs(&ev);
 		snd_seq_ev_set_direct(&ev);
